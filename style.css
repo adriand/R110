@@ -100,8 +100,14 @@ body  {
 #sidebar li {
 	list-style-type: none; /* to deal with get_links_list */
 }
+
+#sidebar li a{
+ color:#666;
+}
+
+
 #sidebar ul li,#sidebar ol li {
-	background: url(img/square_list.jpg) no-repeat right top;
+	background: url(img/line_thing.png) no-repeat right top;
 	margin-top: 5px;
 	text-transform:uppercase;
 	font-size: 92%;
@@ -113,6 +119,7 @@ body  {
 
 /* -------------------------------- dynamic header ----------------------------- */
 #dynhead {
+	
 	margin-top: 12px;
 	margin-left: 12px;
 	position: relative;
@@ -121,12 +128,15 @@ body  {
 #grid {
   width: 100%;
   border-collapse: collapse;
-  background-color: #A2A2A2;
+  background-color: #fff;
 }
 #grid tr td {
 	font-size: 1px;
-  border: 1px solid silver;
+  border-right: 1px solid #ccc;
+border-left: 1px solid #ccc;
 }
+
+
 
 /* -------------------------------- typography, etc. ------------------------- */
 img.unit {
@@ -134,41 +144,45 @@ img.unit {
   width: 12px;
 }
 #curly {
-	background-image: url(img/curly.jpg);
+/*	background-image: url(img/curly.jpg); 
 	background-repeat: no-repeat;
 	background-position: center;
 	min-height: 25px;
 	*height: 25px;
-	margin-top: 10px;
+	margin-top: 10px;*/
 }
 #curly2 {
-	background-image: url(img/bottom_flourish.jpg);
+/*	background-image: url(img/bottom_flourish.jpg); 
 	background-repeat: no-repeat;
 	background-position: center;
 	min-height: 67px;
 	*height: 67px;
-	margin-top: 20px;
+	margin-top: 20px;*/
 }
 .comment_flourish {
-	background-image: url(img/comment_flourish.jpg);
+/*	background-image: url(img/comment_flourish.jpg); 
 	background-repeat: no-repeat;
 	background-position: left;
 	min-height: 30px;
 	*height: 30px;
 	margin-left: 10px;
-	/* margin-top: 3px; */
+ margin-top: 3px; */
 }
 h1 a.posttitle {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 33px;
+/*	font-family: Georgia, "Times New Roman", Times, serif; */
+	font-family: Helvetica, sans-serif; 
+	font-size: 30px;
 	font-weight: normal;
 	color: black;
+	text-align:left;
 	text-decoration: none;
+	letter-spacing:2px;
+	font-weight:bold;
 	margin-left: 10px;
-	line-height: 100%;
+	line-height: 120%;
 }
 h1 a.posttitle:hover {
-	border-bottom: 1px dashed;
+color:cyan;
 }
 h2 {
 	color: #A2A2A2;
@@ -237,13 +251,14 @@ blockquote {
 	border-left: 1px solid #44555D;
 }
 .date_large, .date_small {
-	color: #879BA0;
+	color: black;
 	font-family: Geneva, Arial, Helvetica, sans-serif;
 }
 .date_large {
-	font-size: 80px;
+	font-size: 30px;
 	line-height: .2;
-	padding: 10px 0px 10px 0px;
+	padding: 0px 0px 0px 0px;
+	margin-top:-5px;
 }
 .date_small {
 	margin-top: -5px;
@@ -251,12 +266,13 @@ blockquote {
 }
 .commenttitle {
 	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 144%;
+	font-size: 234%;
 	font-style: italic;
 	text-decoration: none;
 	margin-top: 10px;
-	margin-left: 10px;
+	margin-left: 0px;
 	line-height: 100%;
+	margin-bottom:20px;
 }
 .post {
 	margin-top: 15px;
@@ -265,7 +281,7 @@ blockquote {
 	margin-bottom: 40px;
 }
 .entry {
-	padding: 0px 0px 5px 0px;
+	padding: 10px 0px 5px 0px;
 }
 .entry ol ul {
 	margin-top: 10px;
@@ -317,31 +333,38 @@ blockquote {
 
 .time {
 	margin-top: 2px;
-	padding: 2px 4px 2px 4px;
-	font-size: 22px;
+	padding: 4px 6px 4px 8px;
+	font-size: 14px;
 	line-height: 24px;
 	color: white;
 	font-family: Helvetica, Arial, sans-serif;
+	background:url(img/bull.png) no-repeat;
+	font-weight:normal;
 }
 .day {
 	margin-left: 5px;
 	float: left;
-	background-color: #EDEBB6;
+
 }
 .month {
 	float: left;
-	background-color: #F4F39A;
+
 }
 .year {
 	margin-left: 5px;
-	background-color: #E9E7D0;
+
 	float: left;
 	/* display: block; */
 }
 .topborder {
-	border: 1px solid #BFBFBF;
-	background-color: #F4F3EE;
-	height: 25px;
+	border-top: 1px solid #999;
+	border-right: 1px solid #666;
+	border-left: 1px solid #999;
+	border-bottom: 1px solid #666;
+	background-color: #fff;
+	height: 1px;
+	margin-bottom:20px;
+		margin-top:20px;
 }
 .sidepanel {
 	color: #C5C684;
@@ -359,9 +382,10 @@ blockquote {
 	background: url(img/envelope.png) no-repeat left center;
 	padding-left: 20px;
 }
-.navigation {
-	font-size: 14px;
+.navigation a{
+	font-size: 30px;
 	margin-top: 2px;
+	color:black;
 }
 .nav {
 	display: inline;
@@ -384,6 +408,7 @@ ol.commentlist {
 	padding-left: 20px;
 	width: 90%;
 	margin-bottom: 30px;
+	
 }
 ol.commentlist li {
 	margin-top: 25px;
@@ -399,4 +424,5 @@ ol.commentlist li {
 }
 .commentarea {
 	margin-left: 10px;
+
 }
