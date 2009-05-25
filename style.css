@@ -1,0 +1,402 @@
+/*  
+Theme Name: R110
+Theme URI: http://socialtech.ca/ade/
+Description: Rules to compute by
+Version: 1.00
+Author: Adrian Duyzer
+*/
+
+/*----------------------- document setup/defaults --------------------------------- */
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote, pre, form, fieldset, table, th, td { margin: 0px; padding: 0px; }
+
+p, h1, h2, h3 { margin-bottom: 10px; }
+
+h1 { font-size: 24px; }
+h2 { font-size: 20px; }
+h3 { font-size: 18px; }
+
+a img { border: 0px; }
+
+a:hover { text-decoration: underline; }
+
+input, select { font-size: 11px; }
+
+small { font-size: 10px; }
+
+body  {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size:12px;
+	margin: 0px;
+	padding: 0px;
+	line-height:18px;
+	text-align: center;
+}
+
+.spacer {
+	clear: both;
+	float: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	height: 0;
+	width: 0;
+}
+
+
+/*---------------------- document structure --------------------------------------- */
+#doc {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 980px;
+	min-height: 600px;
+	color: black;
+	text-align: left;
+}
+#hd {
+	margin-bottom: 0px;
+	cursor: pointer;
+	width: 99%;
+}
+#main {
+	padding: 15px 10px 5px 10px;
+	width: 960px;
+}
+#content {
+	float: left;
+	width: 506px;
+}
+#content.single {
+	width: 680px;
+	padding-right: 40px;
+}
+#sidebar {
+	padding-top: 15px;
+	padding-right: 4px;
+	text-align: right;
+	width: 216px;
+	float: left;
+}
+#sidebar2 {
+	text-align: justify;
+	padding-left: 18px;
+	width: 216px;
+	float: left;
+}
+#ft {
+	margin-top: 50px;
+	width: 960px;
+	height: 100px;
+	font-size: 10px;
+}
+
+#sidebar ul, #sidebar ol {
+	list-style-type: none;
+	list-style-position: inside;
+	text-align: right;
+}
+
+#sidebar li {
+	list-style-type: none; /* to deal with get_links_list */
+}
+#sidebar ul li,#sidebar ol li {
+	background: url(img/square_list.jpg) no-repeat right top;
+	margin-top: 5px;
+	text-transform:uppercase;
+	font-size: 92%;
+	padding-right: 20px;
+}
+#sidebar2 ul, #sidebar2 ol {
+	list-style-type: none;
+}
+
+/* -------------------------------- dynamic header ----------------------------- */
+#dynhead {
+	margin-top: 12px;
+	margin-left: 12px;
+	position: relative;
+	width: 955px;
+}
+#grid {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #A2A2A2;
+}
+#grid tr td {
+	font-size: 1px;
+  border: 1px solid silver;
+}
+
+/* -------------------------------- typography, etc. ------------------------- */
+img.unit {
+  position: absolute;
+  width: 12px;
+}
+#curly {
+	background-image: url(img/curly.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 25px;
+	*height: 25px;
+	margin-top: 10px;
+}
+#curly2 {
+	background-image: url(img/bottom_flourish.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 67px;
+	*height: 67px;
+	margin-top: 20px;
+}
+.comment_flourish {
+	background-image: url(img/comment_flourish.jpg);
+	background-repeat: no-repeat;
+	background-position: left;
+	min-height: 30px;
+	*height: 30px;
+	margin-left: 10px;
+	/* margin-top: 3px; */
+}
+h1 a.posttitle {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 33px;
+	font-weight: normal;
+	color: black;
+	text-decoration: none;
+	margin-left: 10px;
+	line-height: 100%;
+}
+h1 a.posttitle:hover {
+	border-bottom: 1px dashed;
+}
+h2 {
+	color: #A2A2A2;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	text-transform: lowercase;
+	margin-top: 25px;
+	line-height: 100%;
+}
+p {
+	margin-top: 2%;
+}
+a, a:visited {
+	color: #28868D;
+	text-decoration: none;
+}
+a:hover {
+	color: #6E9AC1;
+}
+hr {
+	color: #7E7E7E;
+	background-color: #7E7E7E;
+	height: 1px;
+	border: none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+em {
+	font-style: italic;
+}
+strong {
+	font-weight: bold;
+}
+code {
+	margin: 0px;
+	font-size: 12px;
+}
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+.entry img {
+	border: 3px double #BFBFBF;
+}
+img.centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+}
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+}
+blockquote {
+	margin-left: 20px;
+	padding-left: 10px;
+	border-left: 1px solid #44555D;
+}
+.date_large, .date_small {
+	color: #879BA0;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+.date_large {
+	font-size: 80px;
+	line-height: .2;
+	padding: 10px 0px 10px 0px;
+}
+.date_small {
+	margin-top: -5px;
+	font-size: 152%;
+}
+.commenttitle {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 144%;
+	font-style: italic;
+	text-decoration: none;
+	margin-top: 10px;
+	margin-left: 10px;
+	line-height: 100%;
+}
+.post {
+	margin-top: 15px;
+	font-size: 107%;
+	text-align: justify;
+	margin-bottom: 40px;
+}
+.entry {
+	padding: 0px 0px 5px 0px;
+}
+.entry ol ul {
+	margin-top: 10px;
+}
+.entry ol {
+	list-style-type: decimal;
+}
+.entry ul li {
+	margin-left: 40px;
+	list-style: square;
+}
+.entry ol li {
+	margin-left: 40px;
+}
+.entry .contrast1, .entry .contrast2 {
+	margin-top: 10px;
+	width: 47.5%;
+
+}
+.entry .contrast1 blockquote, .entry .contrast2 blockquote {
+	margin-left: 10px;
+	border: none;
+	font-size: 90%;
+	padding-right: 10px;
+}
+.entry .contrast1 {
+	background-color: #8C8C8C;
+	background-image: url(img/contrast.gif);
+	background-position: right top;
+	background-repeat: no-repeat;
+	color: #F1F1E7;
+	float: left;
+	padding: 20px 5px 5px 5px;	
+}
+.entry .contrast2 {
+	float: right;
+	background-image: url(img/contrast-repeat.gif);
+	background-position: -1px top;
+	background-repeat: no-repeat;
+	padding: 20px 5px 5px 0px;	
+}
+.entry .contrast1 a, .entry .contrast1 a:visited {
+	color: #EDEBB6;
+}
+
+.entry .contrast1 a:hover {
+	color: #F4F39A;
+}
+
+.time {
+	margin-top: 2px;
+	padding: 2px 4px 2px 4px;
+	font-size: 22px;
+	line-height: 24px;
+	color: white;
+	font-family: Helvetica, Arial, sans-serif;
+}
+.day {
+	margin-left: 5px;
+	float: left;
+	background-color: #EDEBB6;
+}
+.month {
+	float: left;
+	background-color: #F4F39A;
+}
+.year {
+	margin-left: 5px;
+	background-color: #E9E7D0;
+	float: left;
+	/* display: block; */
+}
+.topborder {
+	border: 1px solid #BFBFBF;
+	background-color: #F4F3EE;
+	height: 25px;
+}
+.sidepanel {
+	color: #C5C684;
+	background-color: #3580B4;
+	padding: 5px 5px 5px 5px;
+}
+.rth {
+	color: #666666;
+}
+.feed {
+	background: url(img/feed.png) no-repeat left center;
+	padding-left: 15px;
+}
+.email {
+	background: url(img/envelope.png) no-repeat left center;
+	padding-left: 20px;
+}
+.navigation {
+	font-size: 14px;
+	margin-top: 2px;
+}
+.nav {
+	display: inline;
+	font-family: Helvetica, Arial, sans-serif;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+.simpletags {
+	background: url(img/technorati.png) no-repeat left center;
+	font-size: 92%;
+	margin-top: 10px;
+	padding-left: 20px;
+	line-height: 18px;
+}
+img.disclaim {
+	vertical-align: middle;
+}
+ol.commentlist {
+	list-style-type: none;
+	padding-left: 20px;
+	width: 90%;
+	margin-bottom: 30px;
+}
+ol.commentlist li {
+	margin-top: 25px;
+	margin-bottom: 10px;
+	padding-top: 5px;
+	padding-left: 8px;
+}
+.commentauthor {
+	font-style: italic;
+	font-size: 156%;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	display: inline;
+}
+.commentarea {
+	margin-left: 10px;
+}
