@@ -23,13 +23,13 @@ function update(x, y, opacity, colour, post_to_server) {
   var width_correction = this.unit_width / 2;
   x -= width_correction;
   y -= width_correction;
-  $("<img class='unit' src='http://socialtech.ca/dynhead/" + colour + ".png' />").css({ "left":x + "px", "top":y + "px" }).appendTo(this.container).fadeTo("slow", opacity);
+	var grid_view = this;
+  $("<img class='unit' src='" + this.image_path + "/" + colour + ".png' />").css({ "left":x + "px", "top":y + "px", "opacity": 0 }).appendTo(this.container).fadeTo("fast", opacity).click(function () { go_home(); });
 }
 
 // load grid data points from web service
 function load_points() {
   var gv = this;
-  // last_update = last_update.toString();
   
   if (last_update != "") {
     // epochs
@@ -39,7 +39,6 @@ function load_points() {
   $.get(this.dback + "/points", { last_update: last_update }, function(data) {
     var items = eval(data);
     $.each(items, function(i,item) {
-      // TODO: add opacity in, with item.opacity
       gv.update(item.x * gv.xwidth, item.y * gv.xwidth, item.opacity / 100);
     });
   });
@@ -50,14 +49,21 @@ function load_points() {
 function click_update(e) {
   // clicks should snap to grid  
   // do this by dividing by xwidth, rounding the result, then multiplying by that
+	// turns out that the snap could probably be relaxed somewhat...what if we played with some different values?
+	// original is that the snap is simply grid_view.xwidth
+	var snap = grid_view.xwidth / 2;
   var x = (e.pageX - $(grid_view.container).offset().left);
-  x = Math.round(x / grid_view.xwidth) * grid_view.xwidth;
+  x = Math.round(x / snap) * snap;
 	var y = (e.pageY - $(grid_view.container).offset().top);
-	y = Math.round(y / grid_view.xwidth) * grid_view.xwidth;
+	y = Math.round(y / snap) * snap;
 	
 	grid_view.update(x, y, null, null, true);
-	if (window.location != "http://socialtech.ca/ade/") {
-		window.location = "http://socialtech.ca/ade"
+	go_home();
+}
+
+function go_home() {
+	if (window.location.toString() != grid_view.home + "/") {
+		window.location = grid_view.home;
 	}
 }
 
@@ -70,15 +76,17 @@ function load_signature() {
   });
 }
 
-// TODO: redefine the function definition to take an options hash instead
-function GridView(xlimit, ylimit, dback, table, container, unit_width) {
-  this.xlimit = xlimit;
-  this.ylimit = ylimit;
-  this.dback = dback;  
-  this.table = table;
-  this.container = container;
-  this.unit_width = unit_width;
-  this.xwidth = 0;
+function GridView(options) {
+  this.xlimit = options['xlimit'];
+  this.ylimit = options['ylimit'];
+  this.dback = options['dback'];  
+  this.table = options['table'];
+  this.container = options['container'];
+  this.unit_width = options['unit_width'];
+	this.home = options['home'] || '/';
+	this.image_path = options['image_path'];
+
+	this.xwidth = 0;
   
   // methods
   this.render = render;

@@ -12,7 +12,26 @@
 
 $(document).ready(function() {
   last_update = "";
-  grid_view = new GridView(120, 16, "http://socialtech.ca/dynhead", "#grid", "#dynhead", 12);
+  
+  if (window.location.toString().match(/localhost/)) {
+    var home = 'http://localhost:8888/wordpress';
+    var dback = "http://localhost:8888/dynhead_local_test";
+  } else {
+    var home = 'http://socialtech.ca/ade';
+    var dback = "http://socialtech.ca/dynhead";    
+  }
+  
+  grid_view = new GridView({
+    xlimit: 120,
+    ylimit: 16,
+    dback: dback,
+    table: "#grid",
+    container: "#dynhead",
+    unit_width: 12,
+    home: home,
+    image_path: '<?php bloginfo('template_directory'); ?>/img'
+  });
+  
   grid_view.render();
   grid_view.load_points();
   // for vanity's sake
