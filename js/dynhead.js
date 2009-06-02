@@ -17,7 +17,7 @@ function update(x, y, opacity, colour, post_to_server) {
   if (!colour) { colour = "white"; }
   if (!opacity) { opacity = 1; }
   if (post_to_server) {
-    $.post(this.dback + "/update", { x: x / this.xwidth, y: y / this.xwidth }, function(data) { });
+    $.post(this.dback + "/update", { x: x / this.xwidth, y: y / this.xwidth }, function(data) { go_home(); });
   }
   // correct widths so the placed object is centered (since it is placed according to top-left coordinate)
   var width_correction = this.unit_width / 2;
@@ -58,7 +58,6 @@ function click_update(e) {
 	y = Math.round(y / snap) * snap;
 	
 	grid_view.update(x, y, null, null, true);
-	go_home();
 }
 
 function go_home() {
