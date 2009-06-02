@@ -69,7 +69,10 @@
 		<a href="mailto:adrianduyzer@gmail.com">Email me</a>
 		</p>
 	</small>
-	<br />
+	
+	<p>
+	  <a href="http://twitter.com/adriandz"><img src="<?php bloginfo('template_directory'); ?>/img/twitter.png" style="vertical-align: middle;" /> twitter.com/adriandz</a>
+	</p>	
 	
 	<p>
 		<span class="rth">Ade is proud to contribute to</span>
