@@ -12,9 +12,18 @@ function render() {
   $(this.table + " tr td").css({ "width" : this.xwidth + "px", "height" : this.xwidth + "px" });
 }
 
+function getRandomInt(min, max)
+{
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 // TODO: use an options hash here
 function update(x, y, opacity, colour, post_to_server) {
-  if (!colour) { colour = "white"; }
+  if (!colour) {
+		var colours = new Array("pink", "blue");
+		var index = getRandomInt(0, colours.length - 1); // Math.floor(Math.random() * (colours.length - 1)); // Math.random() * colours.length;
+		colour = colours[index];
+	}
   if (!opacity) { opacity = 1; }
   if (post_to_server) {
     $.post(this.dback + "/update", { x: x / this.xwidth, y: y / this.xwidth }, function(data) { go_home(); });
