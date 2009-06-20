@@ -20,7 +20,7 @@ function getRandomInt(min, max)
 // TODO: use an options hash here
 function update(x, y, opacity, colour, post_to_server) {
   if (!colour) {
-		var colours = new Array("pink", "blue");
+		var colours = new Array("pink", "blue", "red");
 		var index = getRandomInt(0, colours.length - 1); // Math.floor(Math.random() * (colours.length - 1)); // Math.random() * colours.length;
 		colour = colours[index];
 	}

@@ -140,33 +140,7 @@ img.unit {
   position: absolute;
   width: 12px;
 }
-#curly {
-/*	background-image: url(img/curly.jpg); 
-	background-repeat: no-repeat;
-	background-position: center;
-	min-height: 25px;
-	*height: 25px;
-	margin-top: 10px;*/
-}
-#curly2 {
-/*	background-image: url(img/bottom_flourish.jpg); 
-	background-repeat: no-repeat;
-	background-position: center;
-	min-height: 67px;
-	*height: 67px;
-	margin-top: 20px;*/
-}
-.comment_flourish {
-/*	background-image: url(img/comment_flourish.jpg); 
-	background-repeat: no-repeat;
-	background-position: left;
-	min-height: 30px;
-	*height: 30px;
-	margin-left: 10px;
- margin-top: 3px; */
-}
 h1 a.posttitle {
-/*	font-family: Georgia, "Times New Roman", Times, serif; */
 	font-family: Helvetica, sans-serif; 
 	font-size: 30px;
 	font-weight: normal;
