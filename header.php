@@ -5,6 +5,7 @@
 <meta name="geo.position" CONTENT="43.25764000; -79.88263800" />
 <meta name="geo.placename" CONTENT="Hamilton, ON" />
 <meta name="geo.region" CONTENT="CA-ON" />
+<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/dynhead.js"></script>
@@ -40,7 +41,7 @@ $(document).ready(function() {
 
 </script>
 <?php wp_head(); ?>
-<title>Ade</title>
+<title>Ade <? single_post_title(" :: ") ?></title>
 </head>
 
 <body>

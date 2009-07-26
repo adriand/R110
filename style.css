@@ -30,6 +30,7 @@ body  {
 	padding: 0px;
 	line-height:18px;
 	text-align: center;
+	line-height: 20px;
 }
 
 .spacer {
@@ -236,10 +237,8 @@ blockquote {
 	font-size: 152%;
 }
 .commenttitle {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 234%;
-	font-style: italic;
-	text-decoration: none;
+	font-family: Helvetica, sans-serif;
+	font-size: 22px;
 	margin-top: 10px;
 	margin-left: 0px;
 	line-height: 100%;
@@ -343,6 +342,11 @@ blockquote {
 	padding: 5px 5px 5px 5px;
 }
 .rth {
+	padding-top: 15px;
+	color: #666666;
+}
+.factore {
+	padding-top: 25px;
 	color: #666666;
 }
 .feed {
@@ -382,15 +386,14 @@ ol.commentlist {
 	
 }
 ol.commentlist li {
-	margin-top: 25px;
+	margin-top: 35px;
 	margin-bottom: 10px;
 	padding-top: 5px;
 	padding-left: 8px;
 }
 .commentauthor {
-	font-style: italic;
-	font-size: 156%;
-	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 18px;
+	font-family: Helvetica, sans-serif;
 	display: inline;
 }
 .commentarea {

@@ -64,7 +64,7 @@
 
 	<hr />
 	<small>
-		<p>Life, politics and current events from a Canadian perspective.</p>
+		<p>Life, politics, code and current events from a Canadian perspective.</p>
 		<p>Adrian Duyzer<br />
 		<a href="mailto:adrianduyzer@gmail.com">Email me</a>
 		</p>
@@ -72,15 +72,22 @@
 	
 	<p>
 	  <a href="http://twitter.com/adriandz"><img src="<?php bloginfo('template_directory'); ?>/img/twitter.png" style="vertical-align: middle;" /> twitter.com/adriandz</a>
-	</p>	
+	</p>
 	
-	<p>
-		<span class="rth">Ade is proud to contribute to</span>
+  <div class="rth">Proud contributor to
 		<br />
 		<a href="http://raisethehammer.org" target="_blank">
 		  <img src="<?php bloginfo('template_directory'); ?>/img/raise_the_hammer.jpg" />
 		</a>
-	</p>
+	</div>
+	
+	<div class="factore">
+		Director, Web Division at
+		<br />
+		<a href="http://factore.ca" target="_blank">
+		  <img src="<?php bloginfo('template_directory'); ?>/img/factore.png" />
+		</a>
+	</div>
 	
 	<h2>Feeds</h2>
 	<ul>
